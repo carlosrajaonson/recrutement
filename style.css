@@ -1,67 +1,43 @@
 :root {
-    --bg: #000000;
-    --card: #111111;
-    --blue: #2563eb;
-    --yellow: #facc15; /* Couleur Jaune demandée */
-    --muted: #64748b;
-    --border: #222222;
+    --bg: #000; --card: #111; --blue: #2563eb;
+    --yellow: #facc15; --muted: #64748b; --border: #222;
 }
-
-body {
-    background: var(--bg);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    line-height: 1.6;
-}
-
-.main-header { text-align: center; padding: 50px 20px; }
-.main-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; margin: 0; }
+.main-header { text-align: center; padding: 40px 20px; }
 .disclaimer { color: var(--muted); font-size: 0.8rem; }
-
-.container { padding: 50px 5%; max-width: 1000px; margin: auto; }
-h2 { border-left: 4px solid var(--blue); padding-left: 15px; font-size: 1.4rem; margin-bottom: 30px; }
+.container { padding: 40px 5%; max-width: 1000px; margin: auto; }
+h2 { border-left: 4px solid var(--blue); padding-left: 15px; font-size: 1.3rem; margin-bottom: 25px; }
 
 .reflection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .reflection-item { display: flex; flex-direction: column; gap: 5px; }
-.reflection-item label { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
+label { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
 
-input { 
-    background: #0a0a0a; border: 1px solid #333; color: white; 
-    padding: 12px; border-radius: 6px; font-size: 0.9rem;
-}
+input { background: #0a0a0a; border: 1px solid #333; color: white; padding: 12px; border-radius: 6px; }
+.readonly-input { background: #1a1a1a !important; color: #10b981; font-weight: bold; border: none; }
 
 .dark-alt { background: #050505; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .roi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .roi-card { padding: 25px; border-radius: 12px; border: 1px solid #222; }
-.pink { background: rgba(236, 72, 153, 0.05); }
-.green-card { background: rgba(16, 185, 129, 0.05); }
+.pink { border-top: 3px solid #ec4899; }
+.green-card { border-top: 3px solid #10b981; }
 
 .field-group { margin-bottom: 15px; display: flex; flex-direction: column; gap: 5px; }
-.input-wrapper { display: flex; align-items: center; gap: 10px; }
-.input-wrapper input { flex: 1; background: #000; }
-
 .total-display { border-top: 1px solid #333; margin-top: 20px; padding-top: 20px; }
-#roi-final { font-size: 2rem; font-weight: bold; color: #10b981; }
+#roi-final { font-size: 1.8rem; font-weight: bold; }
 
-.question-card { background: var(--card); padding: 20px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); }
-.quote { font-style: italic; color: #cbd5e1; margin: 0; }
+.question-card { background: var(--card); padding: 20px; border-radius: 10px; margin-bottom: 10px; border: 1px solid var(--border); }
+.quote { font-style: italic; font-size: 0.95rem; margin: 0; }
 
 .table-scroll { overflow-x: auto; background: var(--card); border-radius: 8px; }
-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+table { width: 100%; border-collapse: collapse; min-width: 450px; }
 th, td { text-align: left; padding: 15px; border-bottom: 1px solid var(--border); }
 
-.cta-container { text-align: center; margin-top: 40px; }
+.cta-container { text-align: center; margin-top: 30px; }
 .btn-final { 
-    background: var(--yellow); /* Changement vers Jaune */
-    color: black; /* Texte noir pour lisibilité sur jaune */
-    text-decoration: none; 
-    padding: 18px 40px; 
-    border-radius: 6px; 
-    font-weight: 800; 
-    display: inline-block; 
-    transition: 0.3s; 
+    background: var(--yellow); color: #000; text-decoration: none; 
+    padding: 15px 35px; border-radius: 6px; font-weight: 800; 
+    display: inline-block; transition: 0.3s; 
 }
-.btn-final:hover { transform: scale(1.05); filter: brightness(1.1); }
+.btn-final:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 @media (max-width: 768px) { .reflection-grid { grid-template-columns: 1fr; } }
