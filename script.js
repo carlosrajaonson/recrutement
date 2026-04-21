@@ -1,34 +1,41 @@
 AOS.init({ duration: 800, once: true });
 
-document.addEventListener('input', function() {
+function calculerROI() {
+    // Récupération des valeurs
     const ca = parseFloat(document.getElementById('ca').value) || 0;
     const heuresTravailSemaine = parseFloat(document.getElementById('heures-travail').value) || 0;
     const hfv = parseFloat(document.getElementById('heures-fv').value) || 0;
     const costRes = parseFloat(document.getElementById('cout-res').value) || 0;
     const hRecup = parseFloat(document.getElementById('heures-recup').value) || 0;
 
-    // Calcul du taux horaire basé sur les heures RÉELLES entrées
-    // (Heures/semaine * 4 pour avoir le mois)
-    const heuresMoisReelles = heuresTravailSemaine * 4;
-    
+    // Calcul du taux horaire (CA mensuel / heures travaillées par mois)
+    const heuresMois = heuresTravailSemaine * 4;
     let tauxHoraire = 0;
-    if (heuresMoisReelles > 0) {
-        tauxHoraire = ca / heuresMoisReelles;
+    
+    if (heuresMois > 0) {
+        tauxHoraire = ca / heuresMois;
     }
+
+    // Mise à jour de l'affichage du taux
     document.getElementById('taux').value = Math.round(tauxHoraire);
 
-    // Valeur des tâches à faible valeur
-    const coutMensuelPerdu = (hfv * 4) * tauxHoraire;
-    document.getElementById('cout-mensuel').value = Math.round(coutMensuelPerdu);
+    // Calcul de la valeur perdue
+    const valeurPerdue = (hfv * 4) * tauxHoraire;
+    document.getElementById('cout-mensuel').value = Math.round(valeurPerdue);
 
-    // Valeur récupérée
-    const valeurRecupere = (hRecup * 4) * tauxHoraire;
-    document.getElementById('valeur-recup').value = Math.round(valeurRecupere);
+    // Calcul de la valeur récupérée
+    const valeurRecup = (hRecup * 4) * tauxHoraire;
+    document.getElementById('valeur-recup').value = Math.round(valeurRecup);
 
-    // ROI Net
-    const roiNet = valeurRecupere - costRes;
-    const display = document.getElementById('roi-final');
-    display.innerText = Math.round(roiNet).toLocaleString();
+    // Calcul du ROI Net
+    const roiNet = valeurRecup - costRes;
+    const displayRoi = document.getElementById('roi-final');
     
-    display.style.color = roiNet > 0 ? "#10b981" : "#f87171";
+    displayRoi.innerText = Math.round(roiNet).toLocaleString();
+    displayRoi.style.color = roiNet > 0 ? "#10b981" : "#f87171";
+}
+
+// Écouter tous les changements d'entrée
+document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', calculerROI);
 });

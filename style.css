@@ -2,6 +2,7 @@
     --bg: #000000;
     --card: #111111;
     --blue: #2563eb;
+    --yellow: #facc15; /* Couleur Jaune demandée */
     --muted: #64748b;
     --border: #222222;
 }
@@ -12,28 +13,22 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-.main-header { text-align: center; padding: 60px 20px; }
-.main-header h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; }
+.main-header { text-align: center; padding: 50px 20px; }
+.main-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
 .disclaimer { color: var(--muted); font-size: 0.8rem; }
 
-.container { padding: 60px 5%; max-width: 1000px; margin: auto; }
-h2 { border-left: 4px solid var(--blue); padding-left: 15px; font-size: 1.5rem; margin-bottom: 25px; }
-.intro-text { color: var(--muted); margin-bottom: 40px; }
+.container { padding: 50px 5%; max-width: 1000px; margin: auto; }
+h2 { border-left: 4px solid var(--blue); padding-left: 15px; font-size: 1.4rem; margin-bottom: 30px; }
 
-.reflection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-.reflection-item { display: flex; flex-direction: column; gap: 8px; }
-.reflection-item label { font-size: 0.9rem; font-weight: 600; }
+.reflection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.reflection-item { display: flex; flex-direction: column; gap: 5px; }
+.reflection-item label { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
 
 input { 
-    background: #0a0a0a; 
-    border: 1px solid #333; 
-    color: white; 
-    padding: 12px; 
-    border-radius: 6px; 
-    font-size: 0.9rem;
+    background: #0a0a0a; border: 1px solid #333; color: white; 
+    padding: 12px; border-radius: 6px; font-size: 0.9rem;
 }
 
 .dark-alt { background: #050505; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -43,25 +38,30 @@ input {
 .green-card { background: rgba(16, 185, 129, 0.05); }
 
 .field-group { margin-bottom: 15px; display: flex; flex-direction: column; gap: 5px; }
-.field-desc { font-size: 0.75rem; color: var(--muted); font-style: italic; }
 .input-wrapper { display: flex; align-items: center; gap: 10px; }
 .input-wrapper input { flex: 1; background: #000; }
 
 .total-display { border-top: 1px solid #333; margin-top: 20px; padding-top: 20px; }
 #roi-final { font-size: 2rem; font-weight: bold; color: #10b981; }
 
-.question-card { background: var(--card); padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border); }
-.quote { font-style: italic; color: #cbd5e1; margin: 10px 0; }
-.explanation-box { font-size: 0.85rem; border-top: 1px solid #222; padding-top: 10px; color: var(--muted); }
+.question-card { background: var(--card); padding: 20px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); }
+.quote { font-style: italic; color: #cbd5e1; margin: 0; }
 
 .table-scroll { overflow-x: auto; background: var(--card); border-radius: 8px; }
 table { width: 100%; border-collapse: collapse; min-width: 500px; }
-th, td { text-align: left; padding: 15px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+th, td { text-align: left; padding: 15px; border-bottom: 1px solid var(--border); }
 
-.btn-final { background: var(--blue); color: white; text-decoration: none; padding: 20px 40px; border-radius: 6px; font-weight: bold; display: inline-block; transition: 0.3s; margin-top: 20px; }
-.btn-final:hover { background: #1d4ed8; transform: scale(1.05); }
-
-@media (max-width: 768px) {
-    .reflection-grid { grid-template-columns: 1fr; }
-    .main-header h1 { font-size: 1.8rem; }
+.cta-container { text-align: center; margin-top: 40px; }
+.btn-final { 
+    background: var(--yellow); /* Changement vers Jaune */
+    color: black; /* Texte noir pour lisibilité sur jaune */
+    text-decoration: none; 
+    padding: 18px 40px; 
+    border-radius: 6px; 
+    font-weight: 800; 
+    display: inline-block; 
+    transition: 0.3s; 
 }
+.btn-final:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+@media (max-width: 768px) { .reflection-grid { grid-template-columns: 1fr; } }
