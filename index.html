@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocoaching d'affaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header" data-aos="zoom-in">
+        <h1>Autocoaching d'affaire</h1>
+        <p class="disclaimer">Note : Vos réponses sont strictement privées et ne sont pas récupérées par Licorne.</p>
+    </header>
+
+    <section class="container" data-aos="fade-up">
+        <h2>MA FICHE RÉSULTAT ATTENDU</h2>
+        <p class="intro-text">Remplissez cette fiche AVANT de chercher qui. C'est la base de tout le reste.</p>
+        
+        <div class="reflection-grid">
+            <div class="reflection-item">
+                <label>Quel est le résultat précis que j'attends ?</label>
+                <input type="text" placeholder="Ex: Une boîte mail vide chaque soir...">
+            </div>
+            <div class="reflection-item">
+                <label>En quoi ma situation aura changé dans 60 jours ?</label>
+                <input type="text" placeholder="Ma réponse...">
+            </div>
+            <div class="reflection-item">
+                <label>Combien d'heures par semaine je veux récupérer ?</label>
+                <input type="text" placeholder="Ex: 10 heures">
+            </div>
+            <div class="reflection-item">
+                <label>Quel est mon budget maximum pour cette ressource ?</label>
+                <input type="text" placeholder="Montant en Ar/mois">
+            </div>
+            <div class="reflection-item">
+                <label>Quelle forme de collaboration ?</label>
+                <input type="text" placeholder="Freelance / AV / IA / Salarié">
+            </div>
+            <div class="reflection-item">
+                <label>Comment je sais que c'est réussi ?</label>
+                <input type="text" placeholder="Indicateur mesurable...">
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-alt">
+        <div class="container" data-aos="fade-up">
+            <h2>LE CALCUL QUI CHANGE TOUT</h2>
+            <p class="intro-text">Ce calcul se base sur votre temps de travail réel pour définir votre valeur horaire.</p>
+            
+            <div class="roi-grid">
+                <div class="roi-card pink">
+                    <h3>MA SITUATION ACTUELLE</h3>
+                    <div class="field-group">
+                        <label>Chiffre d'Affaires mensuel actuel (Ar)</label>
+                        <input type="number" id="ca" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label>Heures travaillées par SEMAINE</label>
+                        <span class="field-desc">Indispensable pour calculer votre vraie valeur.</span>
+                        <input type="number" id="heures-travail" placeholder="Ex: 45">
+                    </div>
+                    <div class="field-group">
+                        <label>Mon taux horaire réel</label>
+                        <div class="input-wrapper"><input type="number" id="taux" readonly> <span>Ar/h</span></div>
+                    </div>
+                    <div class="field-group">
+                        <label>Heures/semaine sur tâches faible valeur</label>
+                        <input type="number" id="heures-fv" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="roi-card green-card">
+                    <h3>AVEC MA PREMIÈRE RESSOURCE</h3>
+                    <div class="field-group">
+                        <label>Coût de la ressource par mois (Ar)</label>
+                        <input type="number" id="cout-res" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label>Heures récupérées par semaine</label>
+                        <input type="number" id="heures-recup" placeholder="0">
+                    </div>
+                    <div class="field-group">
+                        <label>Valeur récupérée par mois</label>
+                        <div class="input-wrapper"><input type="number" id="valeur-recup" readonly> <span>Ar</span></div>
+                    </div>
+                    <div class="total-display">
+                        <p>Retour sur investissement net :</p>
+                        <span id="roi-final">0</span> Ar/mois
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>LES 3 QUESTIONS QUI CHANGENT TOUT</h2>
+        <div class="question-list">
+            <div class="question-card" data-aos="fade-up">
+                <h3>Question 1 — L'histoire</h3>
+                <p class="quote">"Raconte-moi ton histoire. Pas ton parcours professionnel. Ton histoire."</p>
+                <div class="explanation-box">
+                    <strong>Ce que vous cherchez :</strong> L'authenticité et la cohérence des choix.
+                </div>
+            </div>
+            <div class="question-card" data-aos="fade-up">
+                <h3>Question 2 — Les combats</h3>
+                <p class="quote">"Quels sont les combats les plus difficiles traversés et surmontés ?"</p>
+                <div class="explanation-box">
+                    <strong>Ce que vous cherchez :</strong> La résilience et l'humilité face à l'échec.
+                </div>
+            </div>
+            <div class="question-card" data-aos="fade-up">
+                <h3>Question 3 — La carte blanche</h3>
+                <p class="quote">"Si tu avais carte blanche les 3 premiers mois — qu'est-ce que tu ferais ?"</p>
+                <div class="explanation-box">
+                    <strong>Ce que vous cherchez :</strong> L'initiative et la compréhension des enjeux.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-alt">
+        <div class="container" data-aos="fade-up">
+            <h2>MA GRILLE D'ÉVALUATION</h2>
+            <div class="table-scroll">
+                <table class="grid-eval">
+                    <thead>
+                        <tr>
+                            <th>CRITÈRES (Note de 1 à 5)</th>
+                            <th>Candidat 1</th>
+                            <th>Candidat 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Résultats concrets passés</td><td>/5</td><td>/5</td></tr>
+                        <tr><td>Compréhension enjeu réel</td><td>/5</td><td>/5</td></tr>
+                        <tr><td>Authenticité (Q1)</td><td>/5</td><td>/5</td></tr>
+                        <tr><td>Résilience (Q2)</td><td>/5</td><td>/5</td></tr>
+                        <tr><td>Initiative (Q3)</td><td>/5</td><td>/5</td></tr>
+                        <tr><td>Feeling et confiance</td><td>/5</td><td>/5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cta-container">
+                <a href="https://licornebrand.github.io/FormationBreakpoint/" class="btn-final">Information Breakpoint</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
